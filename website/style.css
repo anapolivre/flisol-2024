@@ -31,7 +31,29 @@ body > main {
         "informacoes  informacoes";
 }
 
-.cabecalho { grid-area: cabecalho; }
+.cabecalho {
+    grid-area: cabecalho;
+    position: relative;
+    display: grid;
+    place-content: center;
+    white-space: nowrap;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+.cabecalho::after {
+    background-color: orange;
+    background-image: linear-gradient(to right, orangered, gold);
+    position: absolute;
+    height: .5rem;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    content: '';
+}
+.cabecalho h1 span.num {
+    font-size: 2.4em;
+    float: inline-start;
+}
 .logo-flisol {
     grid-area: logo-flisol;
     text-align: center;
@@ -64,6 +86,7 @@ body > main {
     text-align: center;
     display: block;
 }
+.chamada a:visited { color: white; }
 .chamada a.submissao { background-color: #ff8822; }
 .chamada a.inscricao { background-color: #2c59e0; }
 
@@ -104,4 +127,13 @@ body > main {
 }
 .informacoes .local {
     font-size: 1.4rem;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    max-width: 800px;
+    margin: 2rem auto;
+    border-top: white solid .5rem;
+    padding-top: 1rem;
 }
